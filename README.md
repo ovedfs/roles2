@@ -8,3 +8,10 @@
 - Instalamos y configuramos el **package Spatie Laravel Permissions**
 
 ### Creamos un CRUD para los Permisos
+
+### Creamos un CRUD para los Roles
+
+### Agregamos el modelo Post
+
+### Agregamos la funcionalidad para vincular Permisos con Roles
+
