@@ -46,6 +46,7 @@ class PermissionController extends Controller
 
         $permission = new Permission();
         $permission->name = $request->name;
+        $permission->guard_name = 'web';
 
         if($permission->save()) {
             return response()->json([

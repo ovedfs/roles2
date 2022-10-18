@@ -46,6 +46,7 @@ class RoleController extends Controller
 
         $role = new Role();
         $role->name = $request->name;
+        $role->guard_name = 'web';
 
         if($role->save()) {
             return response()->json([
