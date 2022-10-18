@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class RolePermissionsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:sync.role.permissions');
+    }
+
     public function show(Role $role)
     {
         $permissions = Permission::all();

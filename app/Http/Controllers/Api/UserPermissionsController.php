@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class UserPermissionsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:sync.user.permissions');
+    }
+
     public function show(User $user)
     {
         $permissions = Permission::all();

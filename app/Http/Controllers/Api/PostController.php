@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:posts.index')->only('index');
+        $this->middleware('can:posts.store')->only('store');
+        $this->middleware('can:posts.show')->only('show');
+        $this->middleware('can:posts.update')->only('update');
+        $this->middleware('can:posts.destroy')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *

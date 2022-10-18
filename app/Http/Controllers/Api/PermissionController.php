@@ -8,14 +8,14 @@ use Spatie\Permission\Models\Permission;
 
 class PermissionController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('can:permissions.index')->only('index');
-    //     $this->middleware('can:permissions.store')->only('store');
-    //     $this->middleware('can:permissions.show')->only('show');
-    //     $this->middleware('can:permissions.update')->only('update');
-    //     $this->middleware('can:permissions.destroy')->only('destroy');
-    // }
+    public function __construct()
+    {
+        $this->middleware('can:permissions.index')->only('index');
+        $this->middleware('can:permissions.store')->only('store');
+        $this->middleware('can:permissions.show')->only('show');
+        $this->middleware('can:permissions.update')->only('update');
+        $this->middleware('can:permissions.destroy')->only('destroy');
+    }
 
     /**
      * Display a listing of the resource.

@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Validator;
 
 class UserRolesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:sync.user.roles');
+    }
+
     public function show(User $user)
     {
         $roles = Role::all();

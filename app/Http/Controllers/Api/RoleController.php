@@ -8,6 +8,15 @@ use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('can:roles.index')->only('index');
+        $this->middleware('can:roles.store')->only('store');
+        $this->middleware('can:roles.show')->only('show');
+        $this->middleware('can:roles.update')->only('update');
+        $this->middleware('can:roles.destroy')->only('destroy');
+    }
+
     /**
      * Display a listing of the resource.
      *
