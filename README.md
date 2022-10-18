@@ -15,3 +15,6 @@
 
 ### Agregamos la funcionalidad para vincular Permisos con Roles
 
+### Agregamos la funcionalidad para vincular Roles con Usuarios
+
+### Agregamos la funcionalidad para vincular Permisos con Usuarios
