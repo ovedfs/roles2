@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\RoleController;
 use App\Http\Controllers\Api\UserRolesController;
 use App\Http\Controllers\Api\PermissionController;
@@ -34,4 +35,7 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
     // Vincular Permisos a Usuarios
     Route::get('user/{user}/permissions', [UserPermissionsController::class, 'show']);
     Route::post('user/{user}/permissions', [UserPermissionsController::class, 'sync']);
+
+    // CRUD Posts
+    Route::apiResource('posts', PostController::class);
 });
