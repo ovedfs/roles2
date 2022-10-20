@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\RoleController;
+use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\UserRolesController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\RolePermissionsController;
@@ -38,4 +39,7 @@ Route::group(['middleware' => ["auth:sanctum"]], function(){
 
     // CRUD Posts
     Route::apiResource('posts', PostController::class);
+
+    // CRUD Products
+    Route::apiResource('products', ProductController::class);
 });
